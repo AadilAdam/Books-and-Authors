@@ -8,20 +8,12 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - ruby 2.6.0p0 (2018-12-25 revision 66547) [x86_64-darwin17]
 
-* System dependencies
+* Rails version - Rails 6.0.3.3
 
-* Configuration
-
-* Database creation
+* Database creation - sqlite3
 
 * Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
