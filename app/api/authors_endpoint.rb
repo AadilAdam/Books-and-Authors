@@ -11,7 +11,7 @@ class AuthorsEndpoint < Api
       author_details = {
         full_name: author.full_name,
         date_of_birth: author.date_of_birth,
-        books: author.books
+        books: author.author_books.joins(:book).select("books.*")
       }
       return author_details
     end
