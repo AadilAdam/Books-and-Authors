@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :Author %>
+    <%= select_tag "authors[author_ids][]", options_for_select(Author.all.map { |author| [author.full_name, author.id] }), {:multiple => "multiple", :size => 2 } %>
+  </div>
+
+  <div class="field">
     <%= form.label :publish_date %>
     <%= form.date_select :publish_date %>
   </div>
