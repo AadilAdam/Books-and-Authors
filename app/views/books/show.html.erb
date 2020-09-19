@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Authors:</strong>
+  <%= @book.author_books.joins(:author).pluck("authors.first_name || ' ' || authors.last_name") %>
+</p>
+
+<p>
   <strong>Publisher:</strong>
   <%= @book.publisher %>
 </p>
