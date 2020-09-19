@@ -10,72 +10,44 @@
 gender = ["Male", "Female"]
 
 
-15.times do
-  author = Author.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-	date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 70),
-	gender: gender.sample,
-  )
+# 15.times do
+#   author = Author.create(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+# 	date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 70),
+# 	gender: gender.sample,
+#   )
 
-  book = Book.create(
-  	book_title: Faker::Book.title,
-  	publisher: Faker::Book.publisher,
-  	publish_date: Faker::Date.between(from: '2000-09-09', to: '2020-09-09')
-  	)
-end
+#   book = Book.create(
+#   	book_title: Faker::Book.title,
+#   	publisher: Faker::Book.publisher,
+#   	publish_date: Faker::Date.between(from: '2000-09-09', to: '2020-09-09')
+#   	)
+# end
 
-a = Author.find(1)
-a.books << Book.find(2)
-a.books << Book.find(1)
-a.books << Book.find(5)
-
-a = Author.find(2)
-a.books << Book.find(2)
-a.books << Book.find(1)
-a.books << Book.find(5)
-
-a = Author.find(3)
-a.books << Book.find(8)
-a.books << Book.find(11)
-
-a = Author.find(4)
-a.books << Book.find(3)
-a.books << Book.find(15)
-
-a = Author.find(5)
-a.books << Book.find(3)
-
-a = Author.find(6)
-a.books << Book.find(4)
-
-a = Author.find(7)
-a.books << Book.find(6)
-
-a = Author.find(8)
-a.books << Book.find(9)
-
-a = Author.find(9)
-a.books << Book.find(9)
-
-a = Author.find(10)
-a.books << Book.find(7)
-a.books << Book.find(14)
-
-a = Author.find(11)
-a.books << Book.find(8)
-
-a = Author.find(12)
-a.books << Book.find(10)
-
-a = Author.find(13)
-a.books << Book.find(12)
-
-a = Author.find(14)
-a.books << Book.find(13)
-
-a = Author.find(15)
-a.books << Book.find(13)
+AuthorBook.create(author_id: 1, book_id: 2)
+AuthorBook.create(author_id: 1, book_id: 1)
+AuthorBook.create(author_id: 1, book_id: 5)
+AuthorBook.create(author_id: 2, book_id: 2)
+AuthorBook.create(author_id: 2, book_id: 1)
+AuthorBook.create(author_id: 2, book_id: 5)
+AuthorBook.create(author_id: 3, book_id: 8)
+AuthorBook.create(author_id: 3, book_id: 11)
+AuthorBook.create(author_id: 4, book_id: 3)
+AuthorBook.create(author_id: 4, book_id: 15)
+AuthorBook.create(author_id: 5, book_id: 3)
+AuthorBook.create(author_id: 6, book_id: 4)
+AuthorBook.create(author_id: 7, book_id: 6)
+AuthorBook.create(author_id: 8, book_id: 9)
+AuthorBook.create(author_id: 9, book_id: 9)
+AuthorBook.create(author_id: 10, book_id: 7)
+AuthorBook.create(author_id: 10, book_id: 14)
+AuthorBook.create(author_id: 11, book_id: 8)
+AuthorBook.create(author_id: 12, book_id: 10)
+AuthorBook.create(author_id: 13, book_id: 12)
+AuthorBook.create(author_id: 14, book_id: 13)
+AuthorBook.create(author_id: 15, book_id: 13)
+AuthorBook.create(author_id: 13, book_id: 1)
 
 
 
