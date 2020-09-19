@@ -25,9 +25,10 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-
+    @author = Author.find_by(id: params[:book][:author_id])
     respond_to do |format|
       if @book.save
+        @book.author_books.new(author_id: @author.id, book_id: @book.id)
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
@@ -40,8 +41,13 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
+    author_ids = params[:authors][:author_ids]
+    @author_book = AuthorBook.find_by(book_id: @book.id)
     respond_to do |format|
       if @book.update(book_params)
+        author_ids.each do |id|
+          @author_book.update(author_id: id)
+        end
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
       else
