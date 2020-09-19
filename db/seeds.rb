@@ -10,20 +10,20 @@
 gender = ["Male", "Female"]
 
 
-# 15.times do
-#   author = Author.create(
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-# 	date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 70),
-# 	gender: gender.sample,
-#   )
+15.times do
+  author = Author.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+	date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 70),
+	gender: gender.sample,
+  )
 
-#   book = Book.create(
-#   	book_title: Faker::Book.title,
-#   	publisher: Faker::Book.publisher,
-#   	publish_date: Faker::Date.between(from: '2000-09-09', to: '2020-09-09')
-#   	)
-# end
+  book = Book.create(
+  	book_title: Faker::Book.title,
+  	publisher: Faker::Book.publisher,
+  	publish_date: Faker::Date.between(from: '2000-09-09', to: '2020-09-09')
+  	)
+end
 
 AuthorBook.create(author_id: 1, book_id: 2)
 AuthorBook.create(author_id: 1, book_id: 1)
