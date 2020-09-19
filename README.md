@@ -1,5 +1,8 @@
 # README
 
+# Books-and-Authors
+A sample Ruby on Rails Library Application 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
